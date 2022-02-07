@@ -66,7 +66,7 @@ public class GeocodeRepository extends JdbcDaoSupport {
             "  country,\n" +
             "  longitude,\n" +
             "  latitude,\n" +
-            "  CAST (st_distance_sphere(st_makepoint(longitude,latitude), st_makepoint(?,?)) AS FLOAT) as distance\n" +
+            "  CAST (ST_DistanceSphere(st_makepoint(longitude,latitude), st_makepoint(?,?)) AS FLOAT) as distance\n" +
             "FROM geocode_optimized ";
 
 
